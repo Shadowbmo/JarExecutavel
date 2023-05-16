@@ -1,0 +1,54 @@
+
+create database SistemaOperacional;
+use SistemaOperacional;
+
+create table credenciais (
+id int auto_increment primary key,
+login varchar(255)
+);
+
+CREATE TABLE Empresa (
+  idEmpresa varchar(18) NOT NULL,
+  Senha VARCHAR(300) NULL,
+  email VARCHAR(45) NULL,
+  Filial VARCHAR(18) NOT NULL,
+  PRIMARY KEY (idEmpresa),
+    FOREIGN KEY (Filial) REFERENCES Empresa (idEmpresa)
+    );
+    
+    insert into empresa (idEmpresa, senha, email, filial) values
+    ( '21.312.983/2191-23', '123', 'teste1234@gmail.com', '21.312.983/2191-23');
+
+-- -----------------------------------------------------
+-- Table Totem
+-- -----------------------------------------------------
+
+CREATE TABLE Totem (
+  NumIdenti VARCHAR(10) NOT NULL,
+  fkEmpresa varchar(18) NOT NULL,
+  PRIMARY KEY (NumIdenti, fkEmpresa),
+  FOREIGN KEY (fkEmpresa)
+    REFERENCES Empresa (idEmpresa)
+    );
+
+insert into Totem values('T1', '21.312.983/2191-23');
+
+-- -----------------------------------------------------
+-- Table MonitoramentoDeRecursos
+-- -----------------------------------------------------
+
+CREATE TABLE MonitoramentoDeRecursos (
+  idCapacidade INT NOT NULL auto_increment,
+  fkEmpresa varchar(18) NOT NULL,
+  fkTotem VARCHAR(10) NOT NULL,
+  UsoDeMemoriaRam DOUBLE NULL,
+  Disco DOUBLE NULL,
+  UsoDeCPU DOUBLE NULL,
+  PRIMARY KEY (idCapacidade, fkEmpresa, fkTotem),
+  FOREIGN KEY (fkTotem , fkEmpresa)
+    REFERENCES Totem (NumIdenti , fkEmpresa)
+    );
+    
+    select * from MonitoramentoDeRecursos;
+
+
