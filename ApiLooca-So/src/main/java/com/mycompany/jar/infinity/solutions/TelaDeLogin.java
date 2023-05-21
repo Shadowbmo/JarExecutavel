@@ -116,7 +116,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         lblInfinityMonitor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Monitoring_Solution__500___250_px_-removebg-preview_resized.png"))); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
-        jLabel11.setText("Infinity Monitor");
+        jLabel11.setText("Infinity Monito");
 
         txtTotem.setText("Numero De Identificação Do Totem");
         txtTotem.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -138,7 +138,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(179, Short.MAX_VALUE)
+                .addContainerGap(189, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addGap(173, 173, 173))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()

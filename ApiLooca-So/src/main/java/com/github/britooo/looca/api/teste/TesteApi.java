@@ -45,7 +45,7 @@ public class TesteApi {
                 Empresa empresa = new Empresa();
 
                 con.update("insert into MonitoramentoDeRecursos (UsoDeCpu, UsoDeMemoriaRam, Temperatura,DataHora, fkTotem, fkEmpresa) values (?, ?, ?, GETDATE(), ?,? )", processador.getUso(), memoria.getEmUso(), temperatura.getTemperatura(), numeroDeIdentificacaoDoTotem, login);
-                con2.update("insert into monitoramentoderecursos (UsoDeCpu, UsoDeMemoriaRam,Temperatura,DataHora, TotemFkEmpresa, TotemNumIdenti) values (?, ?, ?, now(),?,? )", processador.getUso(), memoria.getEmUso(), temperatura.getTemperatura(), login, numeroDeIdentificacaoDoTotem);
+                con2.update("insert into monitoramentoderecursos (UsoDeCpu, UsoDeMemoriaRam,Temperatura,DataHora) values (?, ?, ?, now())", processador.getUso(), memoria.getEmUso(), temperatura.getTemperatura());
                 System.out.println("Dados inseridos no banco...");
 
                 System.out.println("Sistema");

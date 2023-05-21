@@ -46,7 +46,6 @@ public class Inicio {
             System.out.println("Informe o numero de Identificacao do totem");
             String numeroDeIdentificacaoDoTotem = scanner.nextLine(); // Preencha com o valor adequado
 
-            ConexaoMysql conexaoLocal = new ConexaoMysql();
             VerificacaoCredenciais verCredencial = new VerificacaoCredenciais();
             Boolean validCredencial = verCredencial.verCre(login, senha, numeroDeIdentificacaoDoTotem);
             Boolean validTotem = verCredencial.verCreTotem(numeroDeIdentificacaoDoTotem, login);
@@ -57,6 +56,7 @@ public class Inicio {
                 System.out.println("Iniciando dados");
                 System.out.println("Usuário autenticado. Aguarde...");
                 if (validTotem) {
+                    System.out.println("autenticou");
                     TesteApi.main(login, senha, numeroDeIdentificacaoDoTotem);
                 } else {
                     System.out.println("Totem informado inválido. Informe um Totem válido.");

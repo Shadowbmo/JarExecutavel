@@ -13,7 +13,6 @@ public class VerificacaoCredenciais {
  */
     public Boolean verCreTotem(String numeroDeIdentificacaoDoTotem, String login) {
         Conexao conexao = new Conexao();
-        TelaDeLogin tela = new TelaDeLogin();
         JdbcTemplate con = conexao.getConexaoDoBanco();
         Boolean verificarTotem = false;
 
@@ -40,7 +39,6 @@ public class VerificacaoCredenciais {
  */
     public Boolean verCre(String login, String senha, String numeroDeIdentificacaoDoTotem) {
         Conexao conexao = new Conexao();
-        TelaDeLogin tela = new TelaDeLogin();
         JdbcTemplate con = conexao.getConexaoDoBanco();
 
         Empresa user = null;
@@ -52,7 +50,7 @@ public class VerificacaoCredenciais {
         System.out.println("Senha Informado: " + senha);
         System.out.println("Totem Informado: " + numeroDeIdentificacaoDoTotem);
         try {
-            user = con.queryForObject("select * from Funcionário  where FkEmpresa = ? and Senha = ?",
+            user = con.queryForObject("select * from Funcionario  where FkEmpresa = ? and Senha = ?",
                     new BeanPropertyRowMapper<>(Empresa.class), login, senha);
 
             if (user != null) {
