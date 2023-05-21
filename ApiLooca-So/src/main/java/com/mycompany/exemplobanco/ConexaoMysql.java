@@ -6,21 +6,24 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  *
- * @author Maecio
+ * classe responsavel por fazer a conexão com o banco de dados no mysql
  */
 public class ConexaoMysql {
     private JdbcTemplate conexaoDoBancoMysql;
      public ConexaoMysql() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/SistemaOperacional");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/mydb");
         dataSource.setUsername("root");
-        dataSource.setPassword("urubu100");
+        dataSource.setPassword("3lite016");
         
         this.conexaoDoBancoMysql = new JdbcTemplate(dataSource);
     }
-
-    //Getters and Setters
+/**
+ * Retorna a conexão com o banco de dados.
+ *
+ * @return A conexão com o banco de dados.
+ */
     public JdbcTemplate getConexaoDoBanco() {
         return conexaoDoBancoMysql;
     } 

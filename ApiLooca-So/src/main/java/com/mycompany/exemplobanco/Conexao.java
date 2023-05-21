@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  *
- * @author maessio
+ * classe responsavel por fazer a conexão com o banco de dados na Azure
  */
 public class Conexao {
     
@@ -25,7 +25,12 @@ public class Conexao {
         this.conexaoDoBanco = new JdbcTemplate(dataSource);
     }
 
-    //Getters and Setters
+
+/**
+ * Retorna a conexão com o banco de dados.
+ *
+ * @return A conexão com o banco de dados.
+ */
     public JdbcTemplate getConexaoDoBanco() {
         return conexaoDoBanco;
     } 

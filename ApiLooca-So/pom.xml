@@ -38,7 +38,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.mycompany.jar.infinity.solutions.TelaDeLogin</mainClass> 
+                            <mainClass>com.mycompany.jar.infinity.solutions.Inicio</mainClass> 
                         </manifest>
                     </archive>
                 </configuration>
